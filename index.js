@@ -81,4 +81,34 @@ class BinarySearchTree {
             this.inOrderTraverse(node.right, callback);
         }
     }
+
+    /**
+     * Симметричный обход
+     * >При симметричном обходе посещаются каждый узел до его потомков.
+     * @param {Node} node узел, с которого начинается обход дерева
+     * @param {Function} callback callback функция, которая будет выполнена при каждой итерации
+     * @return {void}
+     */
+    preOrderTraverse(node, callback){
+        if (node){
+            callback(node.data);
+            this.preOrderTraverse(node.left, callback);
+            this.preOrderTraverse(node.right, callback);
+        }
+    }
+
+    /**
+     * Обход в обратном порядке
+     * >При обходе в обратном порядке посещаются узлы после посещения его потомков.
+     * @param {Node} node узел, с которого начинается обход дерева
+     * @param {Function} callback callback функция, которая будет выполнена при каждой итерации
+     * @return {void}
+     */
+    postOrderTraverse(node, callback){
+        this.postOrderTraverse(node.left, callback);
+        this.postOrderTraverse(node.right, callback);
+        callback(node.data);
+    }
 }
+
+//Обход дерева (Traverse) — это процесс посещения всех узлов дерева и выполнения операции на каждом узле.Существует три общих подхода: прямой (in-order), симметричный или поперечный (pre-order) и в обратном порядке (post-order).
