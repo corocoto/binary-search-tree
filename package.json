@@ -1,0 +1,25 @@
+{
+  "name": "binary-search-tree",
+  "version": "1.0.0",
+  "description": "BST realization on JS",
+  "private": true,
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corocoto/binary-search-tree.git"
+  },
+  "keywords": [
+    "algorithms",
+    "binary-search-tree",
+    "bst",
+    "javascript"
+  ],
+  "author": "corocoto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/corocoto/binary-search-tree/issues"
+  },
+  "homepage": "https://github.com/corocoto/binary-search-tree#readme"
+}
