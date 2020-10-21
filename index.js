@@ -65,4 +65,20 @@ class BinarySearchTree {
             node.right ? this.insertNode(node.right, newNode) : node.right = newNode;
         }
     }
+
+    /**
+     * Прямой обход BST.
+     * >При прямом обходе будут посещаться все узлы в порядке возрастания, начиная с указанного узла (хотя это и необязательно),
+     * и выполнять заданную callback функцию (также необязательно).
+     * @param {Node} node узел, с которого начинается обход дерева
+     * @param {Function} callback callback функция
+     * @return {void}
+     */
+    inOrderTraverse(node, callback){
+        if (node){
+            this.inOrderTraverse(node.left, callback);
+            callback(node.data);
+            this.inOrderTraverse(node.right, callback);
+        }
+    }
 }
