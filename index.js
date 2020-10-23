@@ -11,9 +11,9 @@ class Node {
      * @param {Number} data значение узла
      */
     constructor(data) {
-        this.data = data; //node value
-        this.left = null; //left side child
-        this.right = null; //right side child
+        this.data = data; //значение узла
+        this.left = null; //левый дочерний узел
+        this.right = null; //правый дочений узел
     }
 }
 
@@ -130,6 +130,93 @@ class BinarySearchTree {
         }
         return null;
     }
+
+    /**
+     * Находит узел с минимальным значением в дереве
+     * @param {Node} node узел, который будем проверять
+     * @return {Node} эземпляр `Node`, содержащий минальное значение
+     */
+    findMinNode(node) {
+        return node.left ? this.findMinNode(node.left) : node;
+    }
+
+    /**
+     * Ужадение узла
+     * @param {Number} data значение удаляемого узла
+     * @return {void}
+     */
+    remove(data) {
+        this.root = this.removeNode(this.root, data);
+    }
+
+    removeNode(node, data) {
+        if (node) {
+            if (node.data > data) {
+                node.left = this.removeNode(node.left, data);
+                return node;
+            } else if (node.data < data) {
+                node.right = this.removeNode(node.right, data);
+                return node;
+            } else {
+                if (!node.left && !node.right) {
+                    return this.removeLeafNode(node);
+                }
+
+                if (!node.left) {
+                    return this.removeNodeWithoutLeftChild(node);
+                } else if (!node.right) {
+                    return this.removeNodeWithoutRightChild(node);
+                }
+
+                return this.removeNodeWithTwoChildren(node);
+            }
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Удаление узла с двумя потомками.
+     * @param {Node} node удаляемый узел
+     * @return {Node} минимальный дочерний элемент у правого поддерева указанного узла
+     */
+    removeNodeWithTwoChildren(node) {
+        const newNode = this.findMinNode(node.right);
+        node.data = newNode.data;
+        node.right = this.removeNode(node.right, newNode.data);
+        return node;
+    }
+
+    /**
+     * Удаляет родительский узел, устанавливая вместо него дочерний правый
+     * @param {Node} node родительский узел
+     * @return {Node} новый родительский узел (бывший дочерний правый)
+     */
+    removeNodeWithoutLeftChild(node) {
+        node = node.right;
+        return node;
+    }
+
+    /**
+     * Удаляет родительский узел, устанавливая вместо него дочерний левый
+     * @param {Node} node родительский узел
+     * @return {Node} новый родительский узел (бывший дочерний левый)
+     */
+    removeNodeWithoutRightChild(node) {
+        node = node.left;
+        return node;
+    }
+
+    /**
+     * Удаление крайнего узла (leaf node).
+     * >Крайний узел - узел без дочерних элементов
+     * @param {Node} node Узел, который собираемся удалить (присвоить `null`)
+     * @return {Node} Обновленное значение узла
+     */
+    removeLeafNode(node) {
+        node = null;
+        return node;
+    }
 }
 
 //Обход дерева (Traverse) — это процесс посещения всех узлов дерева и выполнения операции на каждом узле.Существует три общих подхода: прямой (in-order), симметричный или поперечный (pre-order) и в обратном порядке (post-order).
@@ -151,5 +238,6 @@ BST.inOrderTraverse(BST.root, (item) => console.log(item));
 console.log('\nПроверка работы симметричного обхода:');
 BST.preOrderTraverse(BST.root, (item) => console.log(item));
 
+BST.remove(13);
 console.log('\nПроверка работы обхода в обратном порядке:');
 BST.postOrderTraverse(BST.root, (item) => console.log(item));
