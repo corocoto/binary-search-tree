@@ -44,7 +44,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><ul><li><a href='https://github.com/corocoto/binary-search-tree/' class='github-link' id='github-link' target='_blank'>Github</a></li></ul><h3>Classes</h3><ul><li><a href="BinarySearchTree.html">BinarySearchTree</a><ul class='methods'><li data-type='method'><a href="BinarySearchTree.html#findMinNode">findMinNode</a></li><li data-type='method'><a href="BinarySearchTree.html#inOrderTraverse">inOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#insert">insert</a></li><li data-type='method'><a href="BinarySearchTree.html#insertNode">insertNode</a></li><li data-type='method'><a href="BinarySearchTree.html#postOrderTraverse">postOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#preOrderTraverse">preOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#remove">remove</a></li><li data-type='method'><a href="BinarySearchTree.html#removeLeafNode">removeLeafNode</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutLeftChild">removeNodeWithoutLeftChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutRightChild">removeNodeWithoutRightChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithTwoChildren">removeNodeWithTwoChildren</a></li><li data-type='method'><a href="BinarySearchTree.html#search">search</a></li></ul></li><li><a href="Node.html">Node</a></li></ul></div>
+    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><ul><li><a href='https://github.com/corocoto/binary-search-tree/' class='github-link' id='github-link' target='_blank'>Github</a></li></ul><h3>Classes</h3><ul><li><a href="BinarySearchTree.html">BinarySearchTree</a><ul class='methods'><li data-type='method'><a href="BinarySearchTree.html#findMinNode">findMinNode</a></li><li data-type='method'><a href="BinarySearchTree.html#inOrderTraverse">inOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#insert">insert</a></li><li data-type='method'><a href="BinarySearchTree.html#insertNode">insertNode</a></li><li data-type='method'><a href="BinarySearchTree.html#postOrderTraverse">postOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#preOrderTraverse">preOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#remove">remove</a></li><li data-type='method'><a href="BinarySearchTree.html#removeLeafNode">removeLeafNode</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNode">removeNode</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutLeftChild">removeNodeWithoutLeftChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutRightChild">removeNodeWithoutRightChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithTwoChildren">removeNodeWithTwoChildren</a></li><li data-type='method'><a href="BinarySearchTree.html#search">search</a></li></ul></li><li><a href="Node.html">Node</a></li></ul></div>
 </nav>
 
 <div id="main">
@@ -134,7 +134,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line33">line 33</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line29">line 29</a>
             </li></ul></dd>
         </div>
     
@@ -163,7 +163,7 @@
     <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
         <strong>Example</strong>
         
-    <pre class="prettyprint"><code>```jsconst BST = new BinarySearchTree();BST.insert(11);BST.insert(5);BST.insert(4);BST.insert(5);BST.insert(12);BST.insert(6);```</code></pre>
+    <pre class="prettyprint"><code>const BST = new BinarySearchTree();BST.insert(11);BST.insert(5);BST.insert(4);BST.insert(5);BST.insert(12);BST.insert(6);</code></pre>
 
     </div>
 
@@ -198,7 +198,7 @@
 
 
     <div class="description">
-        Находит узел с минимальным значением в дереве
+        Находит узел с минимальным значением в дереве.
     </div>
 
 
@@ -294,7 +294,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line139">line 139</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line138">line 138</a>
             </li></ul></dd>
         </div>
     
@@ -357,7 +357,7 @@
 
 
     <div class="description">
-        Прямой обход BST.>При прямом обходе будут посещаться все узлы в порядке возрастания, начиная с указанного узла (хотя это и необязательно),и выполнять заданную callback функцию (также необязательно).
+        Прямой обход BST.>При прямом обходе будут посещаться все узлы в порядке возрастания, начиная с указанного узла (хотя это и необязательно),и выполнять заданную callback функцию (также необязательно).
     </div>
 
 
@@ -476,7 +476,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line77">line 77</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line74">line 74</a>
             </li></ul></dd>
         </div>
     
@@ -535,7 +535,7 @@
 
 
     <div class="description">
-        Создает экземпляр класса `Node`. И располагает его внутри BST
+        Создает экземпляр класса `Node`. И располагает его внутри BST.
     </div>
 
 
@@ -631,7 +631,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line46">line 46</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line42">line 42</a>
             </li></ul></dd>
         </div>
     
@@ -690,7 +690,7 @@
 
 
     <div class="description">
-        Размещает узел в нужной позиции BST
+        Размещает узел в нужной позиции BST.
     </div>
 
 
@@ -809,7 +809,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line61">line 61</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line57">line 57</a>
             </li></ul></dd>
         </div>
     
@@ -868,7 +868,7 @@
 
 
     <div class="description">
-        Обход в обратном порядке>При обходе в обратном порядке посещаются узлы после посещения его потомков.
+        Обход в обратном порядке.>При обходе в обратном порядке посещаются узлы после посещения его потомков.
     </div>
 
 
@@ -987,7 +987,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line107">line 107</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line106">line 106</a>
             </li></ul></dd>
         </div>
     
@@ -1046,7 +1046,7 @@
 
 
     <div class="description">
-        Симметричный обход>При симметричном обходе посещаются каждый узел до его потомков.
+        Симметричный обход.>При симметричном обходе посещаются каждый узел до его потомков.
     </div>
 
 
@@ -1165,7 +1165,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line92">line 92</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line90">line 90</a>
             </li></ul></dd>
         </div>
     
@@ -1224,7 +1224,7 @@
 
 
     <div class="description">
-        Ужадение узла
+        Удаление узла.
     </div>
 
 
@@ -1320,7 +1320,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line148">line 148</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line147">line 147</a>
             </li></ul></dd>
         </div>
     
@@ -1379,7 +1379,7 @@
 
 
     <div class="description">
-        Удаление крайнего узла (leaf node).>Крайний узел - узел без дочерних элементов
+        Удаление крайнего узла (leaf node).>Крайний узел - узел без дочерних элементов
     </div>
 
 
@@ -1475,7 +1475,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line216">line 216</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line222">line 222</a>
             </li></ul></dd>
         </div>
     
@@ -1531,6 +1531,190 @@
 
     
 
+    <h4 class="name" id="removeNode"><span class="type-signature"></span>removeNode<span class="signature">(node, data)</span><span class="type-signature"> &rarr; {<a href="Node.html">Node</a>|null|*}</span></h4>
+
+    
+
+
+
+    <div class="description">
+        Выбор способа удаления.
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>node</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Node.html">Node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">элемент, в котором происходит поиск удаляемого узла</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">значение узла</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line157">line 157</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Node.html">Node</a></span>
+|
+
+<span class="param-type">null</span>
+|
+
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+ 
+    </div>
+
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="removeNodeWithoutLeftChild"><span class="type-signature"></span>removeNodeWithoutLeftChild<span class="signature">(node)</span><span class="type-signature"> &rarr; {<a href="Node.html">Node</a>}</span></h4>
 
     
@@ -1538,7 +1722,7 @@
 
 
     <div class="description">
-        Удаляет родительский узел, устанавливая вместо него дочерний правый
+        Удаляет родительский узел, устанавливая вместо него дочерний правый.
     </div>
 
 
@@ -1634,7 +1818,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line195">line 195</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line200">line 200</a>
             </li></ul></dd>
         </div>
     
@@ -1697,7 +1881,7 @@
 
 
     <div class="description">
-        Удаляет родительский узел, устанавливая вместо него дочерний левый
+        Удаляет родительский узел, устанавливая вместо него дочерний левый.
     </div>
 
 
@@ -1793,7 +1977,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line205">line 205</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line210">line 210</a>
             </li></ul></dd>
         </div>
     
@@ -1952,7 +2136,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line183">line 183</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line188">line 188</a>
             </li></ul></dd>
         </div>
     
@@ -2015,7 +2199,7 @@
 
 
     <div class="description">
-        Поиск
+        Поиск.
     </div>
 
 
@@ -2134,7 +2318,7 @@
         <div class="details-item-container">
             <dt class="tag-source">Source:</dt>
             <dd class="tag-source"><ul class="dummy"><li>
-                <a href="index.js.html">index.js</a>, <a href="index.js.html#line121">line 121</a>
+                <a href="index.js.html">index.js</a>, <a href="index.js.html#line120">line 120</a>
             </li></ul></dd>
         </div>
     
@@ -2215,7 +2399,7 @@
 <script src="scripts/linenumber.js"></script>
 <script src="scripts/fix-code-block.js"></script>
 <script>
-var list = [{"title":"BinarySearchTree","link":"<a href=\"BinarySearchTree.html\">BinarySearchTree</a>"},{"title":"BinarySearchTree#findMinNode","link":"<a href=\"BinarySearchTree.html#findMinNode\">BinarySearchTree &rtrif; findMinNode</a>"},{"title":"BinarySearchTree#inOrderTraverse","link":"<a href=\"BinarySearchTree.html#inOrderTraverse\">BinarySearchTree &rtrif; inOrderTraverse</a>"},{"title":"BinarySearchTree#insert","link":"<a href=\"BinarySearchTree.html#insert\">BinarySearchTree &rtrif; insert</a>"},{"title":"BinarySearchTree#insertNode","link":"<a href=\"BinarySearchTree.html#insertNode\">BinarySearchTree &rtrif; insertNode</a>"},{"title":"BinarySearchTree#postOrderTraverse","link":"<a href=\"BinarySearchTree.html#postOrderTraverse\">BinarySearchTree &rtrif; postOrderTraverse</a>"},{"title":"BinarySearchTree#preOrderTraverse","link":"<a href=\"BinarySearchTree.html#preOrderTraverse\">BinarySearchTree &rtrif; preOrderTraverse</a>"},{"title":"BinarySearchTree#remove","link":"<a href=\"BinarySearchTree.html#remove\">BinarySearchTree &rtrif; remove</a>"},{"title":"BinarySearchTree#removeLeafNode","link":"<a href=\"BinarySearchTree.html#removeLeafNode\">BinarySearchTree &rtrif; removeLeafNode</a>"},{"title":"BinarySearchTree#removeNodeWithoutLeftChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutLeftChild\">BinarySearchTree &rtrif; removeNodeWithoutLeftChild</a>"},{"title":"BinarySearchTree#removeNodeWithoutRightChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutRightChild\">BinarySearchTree &rtrif; removeNodeWithoutRightChild</a>"},{"title":"BinarySearchTree#removeNodeWithTwoChildren","link":"<a href=\"BinarySearchTree.html#removeNodeWithTwoChildren\">BinarySearchTree &rtrif; removeNodeWithTwoChildren</a>"},{"title":"BinarySearchTree#search","link":"<a href=\"BinarySearchTree.html#search\">BinarySearchTree &rtrif; search</a>"},{"title":"Node","link":"<a href=\"Node.html\">Node</a>"}];
+var list = [{"title":"BinarySearchTree","link":"<a href=\"BinarySearchTree.html\">BinarySearchTree</a>"},{"title":"BinarySearchTree#findMinNode","link":"<a href=\"BinarySearchTree.html#findMinNode\">BinarySearchTree &rtrif; findMinNode</a>"},{"title":"BinarySearchTree#inOrderTraverse","link":"<a href=\"BinarySearchTree.html#inOrderTraverse\">BinarySearchTree &rtrif; inOrderTraverse</a>"},{"title":"BinarySearchTree#insert","link":"<a href=\"BinarySearchTree.html#insert\">BinarySearchTree &rtrif; insert</a>"},{"title":"BinarySearchTree#insertNode","link":"<a href=\"BinarySearchTree.html#insertNode\">BinarySearchTree &rtrif; insertNode</a>"},{"title":"BinarySearchTree#postOrderTraverse","link":"<a href=\"BinarySearchTree.html#postOrderTraverse\">BinarySearchTree &rtrif; postOrderTraverse</a>"},{"title":"BinarySearchTree#preOrderTraverse","link":"<a href=\"BinarySearchTree.html#preOrderTraverse\">BinarySearchTree &rtrif; preOrderTraverse</a>"},{"title":"BinarySearchTree#remove","link":"<a href=\"BinarySearchTree.html#remove\">BinarySearchTree &rtrif; remove</a>"},{"title":"BinarySearchTree#removeLeafNode","link":"<a href=\"BinarySearchTree.html#removeLeafNode\">BinarySearchTree &rtrif; removeLeafNode</a>"},{"title":"BinarySearchTree#removeNode","link":"<a href=\"BinarySearchTree.html#removeNode\">BinarySearchTree &rtrif; removeNode</a>"},{"title":"BinarySearchTree#removeNodeWithoutLeftChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutLeftChild\">BinarySearchTree &rtrif; removeNodeWithoutLeftChild</a>"},{"title":"BinarySearchTree#removeNodeWithoutRightChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutRightChild\">BinarySearchTree &rtrif; removeNodeWithoutRightChild</a>"},{"title":"BinarySearchTree#removeNodeWithTwoChildren","link":"<a href=\"BinarySearchTree.html#removeNodeWithTwoChildren\">BinarySearchTree &rtrif; removeNodeWithTwoChildren</a>"},{"title":"BinarySearchTree#search","link":"<a href=\"BinarySearchTree.html#search\">BinarySearchTree &rtrif; search</a>"},{"title":"Node","link":"<a href=\"Node.html\">Node</a>"}];
 setupSearch(list)
 </script>
 

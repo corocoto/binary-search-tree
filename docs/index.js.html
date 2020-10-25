@@ -44,7 +44,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><ul><li><a href='https://github.com/corocoto/binary-search-tree/' class='github-link' id='github-link' target='_blank'>Github</a></li></ul><h3>Classes</h3><ul><li><a href="BinarySearchTree.html">BinarySearchTree</a><ul class='methods'><li data-type='method'><a href="BinarySearchTree.html#findMinNode">findMinNode</a></li><li data-type='method'><a href="BinarySearchTree.html#inOrderTraverse">inOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#insert">insert</a></li><li data-type='method'><a href="BinarySearchTree.html#insertNode">insertNode</a></li><li data-type='method'><a href="BinarySearchTree.html#postOrderTraverse">postOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#preOrderTraverse">preOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#remove">remove</a></li><li data-type='method'><a href="BinarySearchTree.html#removeLeafNode">removeLeafNode</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutLeftChild">removeNodeWithoutLeftChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutRightChild">removeNodeWithoutRightChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithTwoChildren">removeNodeWithTwoChildren</a></li><li data-type='method'><a href="BinarySearchTree.html#search">search</a></li></ul></li><li><a href="Node.html">Node</a></li></ul></div>
+    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><ul><li><a href='https://github.com/corocoto/binary-search-tree/' class='github-link' id='github-link' target='_blank'>Github</a></li></ul><h3>Classes</h3><ul><li><a href="BinarySearchTree.html">BinarySearchTree</a><ul class='methods'><li data-type='method'><a href="BinarySearchTree.html#findMinNode">findMinNode</a></li><li data-type='method'><a href="BinarySearchTree.html#inOrderTraverse">inOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#insert">insert</a></li><li data-type='method'><a href="BinarySearchTree.html#insertNode">insertNode</a></li><li data-type='method'><a href="BinarySearchTree.html#postOrderTraverse">postOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#preOrderTraverse">preOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#remove">remove</a></li><li data-type='method'><a href="BinarySearchTree.html#removeLeafNode">removeLeafNode</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNode">removeNode</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutLeftChild">removeNodeWithoutLeftChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutRightChild">removeNodeWithoutRightChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithTwoChildren">removeNodeWithTwoChildren</a></li><li data-type='method'><a href="BinarySearchTree.html#search">search</a></li></ul></li><li><a href="Node.html">Node</a></li></ul></div>
 </nav>
 
 <div id="main">
@@ -62,9 +62,7 @@
             <pre class="prettyprint source linenums"><code>/**
  * Узел, используемый внутри BST.
  * @example
- * ```js
  * const node = new Node(data);
- * ```
  */
 class Node {
     /**
@@ -81,7 +79,6 @@ class Node {
 /**
  * Класс для создания экземпляра BST.
  * @example
- * ```js
  * const BST = new BinarySearchTree();
  * BST.insert(11);
  * BST.insert(5);
@@ -89,7 +86,6 @@ class Node {
  * BST.insert(5);
  * BST.insert(12);
  * BST.insert(6);
- * ```
  */
 class BinarySearchTree {
     /**
@@ -100,7 +96,7 @@ class BinarySearchTree {
     }
 
     /**
-     * Создает экземпляр класса `Node`. И располагает его внутри BST
+     * Создает экземпляр класса `Node`. И располагает его внутри BST.
      * @param {Number} data значение добавляемого узла
      * @return {void}
      */
@@ -114,7 +110,7 @@ class BinarySearchTree {
     }
 
     /**
-     * Размещает узел в нужной позиции BST
+     * Размещает узел в нужной позиции BST.
      * @param {Node} node родительский узел
      * @param {Node} newNode добавляемый узел
      * @return {void}
@@ -129,6 +125,7 @@ class BinarySearchTree {
 
     /**
      * Прямой обход BST.
+     *
      * >При прямом обходе будут посещаться все узлы в порядке возрастания, начиная с указанного узла (хотя это и необязательно),
      * и выполнять заданную callback функцию (также необязательно).
      * @param {Node} node узел, с которого начинается обход дерева
@@ -144,7 +141,8 @@ class BinarySearchTree {
     }
 
     /**
-     * Симметричный обход
+     * Симметричный обход.
+     *
      * >При симметричном обходе посещаются каждый узел до его потомков.
      * @param {Node} node узел, с которого начинается обход дерева
      * @param {Function} callback callback функция, которая будет выполнена при каждой итерации
@@ -159,7 +157,8 @@ class BinarySearchTree {
     }
 
     /**
-     * Обход в обратном порядке
+     * Обход в обратном порядке.
+     *
      * >При обходе в обратном порядке посещаются узлы после посещения его потомков.
      * @param {Node} node узел, с которого начинается обход дерева
      * @param {Function} callback callback функция, которая будет выполнена при каждой итерации
@@ -174,7 +173,7 @@ class BinarySearchTree {
     }
 
     /**
-     * Поиск
+     * Поиск.
      * @param {Node} node Узел, в котором производится поиск
      * @param {Number} data значение, которое ищем
      * @return {Node} узел, с указанным значением `data`
@@ -193,7 +192,7 @@ class BinarySearchTree {
     }
 
     /**
-     * Находит узел с минимальным значением в дереве
+     * Находит узел с минимальным значением в дереве.
      * @param {Node} node узел, который будем проверять
      * @return {Node} эземпляр `Node`, содержащий минальное значение
      */
@@ -202,7 +201,7 @@ class BinarySearchTree {
     }
 
     /**
-     * Ужадение узла
+     * Удаление узла.
      * @param {Number} data значение удаляемого узла
      * @return {void}
      */
@@ -210,6 +209,12 @@ class BinarySearchTree {
         this.root = this.removeNode(this.root, data);
     }
 
+    /**
+     * Выбор способа удаления.
+     * @param {Node} node элемент, в котором происходит поиск удаляемого узла
+     * @param {Number} data значение узла
+     * @return {Node|null|*}
+     */
     removeNode(node, data) {
         if (node) {
             if (node.data > data) {
@@ -249,7 +254,7 @@ class BinarySearchTree {
     }
 
     /**
-     * Удаляет родительский узел, устанавливая вместо него дочерний правый
+     * Удаляет родительский узел, устанавливая вместо него дочерний правый.
      * @param {Node} node родительский узел
      * @return {Node} новый родительский узел (бывший дочерний правый)
      */
@@ -259,7 +264,7 @@ class BinarySearchTree {
     }
 
     /**
-     * Удаляет родительский узел, устанавливая вместо него дочерний левый
+     * Удаляет родительский узел, устанавливая вместо него дочерний левый.
      * @param {Node} node родительский узел
      * @return {Node} новый родительский узел (бывший дочерний левый)
      */
@@ -270,6 +275,7 @@ class BinarySearchTree {
 
     /**
      * Удаление крайнего узла (leaf node).
+     *
      * >Крайний узел - узел без дочерних элементов
      * @param {Node} node Узел, который собираемся удалить (присвоить `null`)
      * @return {Node} Обновленное значение узла
@@ -325,7 +331,7 @@ BST.postOrderTraverse(BST.root, (item) => console.log(item));</code></pre>
 <script src="scripts/linenumber.js"></script>
 <script src="scripts/fix-code-block.js"></script>
 <script>
-var list = [{"title":"BinarySearchTree","link":"<a href=\"BinarySearchTree.html\">BinarySearchTree</a>"},{"title":"BinarySearchTree#findMinNode","link":"<a href=\"BinarySearchTree.html#findMinNode\">BinarySearchTree &rtrif; findMinNode</a>"},{"title":"BinarySearchTree#inOrderTraverse","link":"<a href=\"BinarySearchTree.html#inOrderTraverse\">BinarySearchTree &rtrif; inOrderTraverse</a>"},{"title":"BinarySearchTree#insert","link":"<a href=\"BinarySearchTree.html#insert\">BinarySearchTree &rtrif; insert</a>"},{"title":"BinarySearchTree#insertNode","link":"<a href=\"BinarySearchTree.html#insertNode\">BinarySearchTree &rtrif; insertNode</a>"},{"title":"BinarySearchTree#postOrderTraverse","link":"<a href=\"BinarySearchTree.html#postOrderTraverse\">BinarySearchTree &rtrif; postOrderTraverse</a>"},{"title":"BinarySearchTree#preOrderTraverse","link":"<a href=\"BinarySearchTree.html#preOrderTraverse\">BinarySearchTree &rtrif; preOrderTraverse</a>"},{"title":"BinarySearchTree#remove","link":"<a href=\"BinarySearchTree.html#remove\">BinarySearchTree &rtrif; remove</a>"},{"title":"BinarySearchTree#removeLeafNode","link":"<a href=\"BinarySearchTree.html#removeLeafNode\">BinarySearchTree &rtrif; removeLeafNode</a>"},{"title":"BinarySearchTree#removeNodeWithoutLeftChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutLeftChild\">BinarySearchTree &rtrif; removeNodeWithoutLeftChild</a>"},{"title":"BinarySearchTree#removeNodeWithoutRightChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutRightChild\">BinarySearchTree &rtrif; removeNodeWithoutRightChild</a>"},{"title":"BinarySearchTree#removeNodeWithTwoChildren","link":"<a href=\"BinarySearchTree.html#removeNodeWithTwoChildren\">BinarySearchTree &rtrif; removeNodeWithTwoChildren</a>"},{"title":"BinarySearchTree#search","link":"<a href=\"BinarySearchTree.html#search\">BinarySearchTree &rtrif; search</a>"},{"title":"Node","link":"<a href=\"Node.html\">Node</a>"}];
+var list = [{"title":"BinarySearchTree","link":"<a href=\"BinarySearchTree.html\">BinarySearchTree</a>"},{"title":"BinarySearchTree#findMinNode","link":"<a href=\"BinarySearchTree.html#findMinNode\">BinarySearchTree &rtrif; findMinNode</a>"},{"title":"BinarySearchTree#inOrderTraverse","link":"<a href=\"BinarySearchTree.html#inOrderTraverse\">BinarySearchTree &rtrif; inOrderTraverse</a>"},{"title":"BinarySearchTree#insert","link":"<a href=\"BinarySearchTree.html#insert\">BinarySearchTree &rtrif; insert</a>"},{"title":"BinarySearchTree#insertNode","link":"<a href=\"BinarySearchTree.html#insertNode\">BinarySearchTree &rtrif; insertNode</a>"},{"title":"BinarySearchTree#postOrderTraverse","link":"<a href=\"BinarySearchTree.html#postOrderTraverse\">BinarySearchTree &rtrif; postOrderTraverse</a>"},{"title":"BinarySearchTree#preOrderTraverse","link":"<a href=\"BinarySearchTree.html#preOrderTraverse\">BinarySearchTree &rtrif; preOrderTraverse</a>"},{"title":"BinarySearchTree#remove","link":"<a href=\"BinarySearchTree.html#remove\">BinarySearchTree &rtrif; remove</a>"},{"title":"BinarySearchTree#removeLeafNode","link":"<a href=\"BinarySearchTree.html#removeLeafNode\">BinarySearchTree &rtrif; removeLeafNode</a>"},{"title":"BinarySearchTree#removeNode","link":"<a href=\"BinarySearchTree.html#removeNode\">BinarySearchTree &rtrif; removeNode</a>"},{"title":"BinarySearchTree#removeNodeWithoutLeftChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutLeftChild\">BinarySearchTree &rtrif; removeNodeWithoutLeftChild</a>"},{"title":"BinarySearchTree#removeNodeWithoutRightChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutRightChild\">BinarySearchTree &rtrif; removeNodeWithoutRightChild</a>"},{"title":"BinarySearchTree#removeNodeWithTwoChildren","link":"<a href=\"BinarySearchTree.html#removeNodeWithTwoChildren\">BinarySearchTree &rtrif; removeNodeWithTwoChildren</a>"},{"title":"BinarySearchTree#search","link":"<a href=\"BinarySearchTree.html#search\">BinarySearchTree &rtrif; search</a>"},{"title":"Node","link":"<a href=\"Node.html\">Node</a>"}];
 setupSearch(list)
 </script>
 
