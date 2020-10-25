@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      
+        <meta name="author" content="Artem Gusev">
+      
+        <meta name="description" content="Binary Search Tree project documentation">
+      
+    
+    <title>Home</title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/third-party/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/third-party/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-base.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-light.css">
+    
+    
+    
+<svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/>
+                <path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/>
+            </g>
+        </symbol>
+    </defs>
+</svg>
+
+</head>
+<body>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><ul><li><a href='https://github.com/corocoto/binary-search-tree/' class='github-link' id='github-link' target='_blank'>Github</a></li></ul><h3>Classes</h3><ul><li><a href="BinarySearchTree.html">BinarySearchTree</a><ul class='methods'><li data-type='method'><a href="BinarySearchTree.html#findMinNode">findMinNode</a></li><li data-type='method'><a href="BinarySearchTree.html#inOrderTraverse">inOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#insert">insert</a></li><li data-type='method'><a href="BinarySearchTree.html#insertNode">insertNode</a></li><li data-type='method'><a href="BinarySearchTree.html#postOrderTraverse">postOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#preOrderTraverse">preOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#remove">remove</a></li><li data-type='method'><a href="BinarySearchTree.html#removeLeafNode">removeLeafNode</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutLeftChild">removeNodeWithoutLeftChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutRightChild">removeNodeWithoutRightChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithTwoChildren">removeNodeWithTwoChildren</a></li><li data-type='method'><a href="BinarySearchTree.html#search">search</a></li></ul></li><li><a href="Node.html">Node</a></li></ul></div>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h2>Реализация двоичного дерева поиска на JavaScript</h2>
+<h3>Описание</h3>
+<p><img src="https://user-images.githubusercontent.com/37180024/96990365-b046ac80-152f-11eb-8c06-4c836998fb52.png" alt="bst"></p>
+<p>Узел в двоичном дереве (или как его еще называют бинарном) имеет не более двух дочерних элементов: левого и правого элемента.
+Это определение позволяет вам писать алгоритмы для более эффективной вставки, поиска и удаления узлов.</p>
+<p><img src="https://user-images.githubusercontent.com/37180024/96990580-fa2f9280-152f-11eb-9f85-6fa6436aab4d.png" alt="bst example"></p>
+<p>Двоичное дерево поиска (<strong>binary search tree — BST</strong>) — это тоже двоичное дерево.</p>
+<p>Основное отличие состоит в том, что BST позволяет хранить отсортированные узлы с меньшим значением слева и узлы с большим значением справа.</p>
+<h4>Обход BST</h4>
+<p><strong>Обход дерева (Traverse)</strong> — это процесс посещения всех узлов дерева и выполнения операции на каждом узле.</p>
+<p>Существует три общих подхода:</p>
+<ul>
+<li><strong>Прямой (in-order)</strong>;</li>
+<li><strong>Симметричный или поперечный (pre-order);</strong></li>
+<li><strong>В обратном порядке (post-order).</strong></li>
+</ul>
+<h5>Прямой обход</h5>
+<p>При прямом обходе будут посещаться все узлы в порядке возрастания, начиная с указанного узла (хотя это и необязательно), и выполнять заданную функцию обратного вызова callback (также необязательно).</p>
+<p><img src="https://user-images.githubusercontent.com/37180024/97105062-7d382080-16c9-11eb-9e3f-498eaa4cf894.png" alt="in-order traverse"></p>
+<h5>Симметричный обход</h5>
+<p>При симметричном обходе посещаются каждый узел до его потомков.</p>
+<p><img src="https://user-images.githubusercontent.com/37180024/97105193-3991e680-16ca-11eb-8b75-908d4d8b2590.png" alt="pre-order traverse"></p>
+<h5>Обход в обратном порядке</h5>
+<p>При обходе в обратном порядке посещаются узлы после посещения его потомков.</p>
+<p><img src="https://user-images.githubusercontent.com/37180024/97105248-7f4eaf00-16ca-11eb-9b65-f2b7224a21ab.png" alt="post-order traverse"></p>
+<h4>Удаление узла из BST</h4>
+<p>Метод удаления является наиболее сложным. Его сложность обусловлена различными сценариями, которые нам нужны.</p>
+<p>В начале мы ищем соответствующий узел, который нужно удалить, а потом есть три сценария, которые мы рассмотрим более подробно ниже.</p>
+<h5>Удаление крайнего узла (leaf node)</h5>
+<p>Первый сценарий включает в себя крайний узел (<strong>leaf node</strong>), то есть у которого нет левого или правого дочернего элемента. В этом случае нам нужно будет удалить узел, присвоив ему значение <code>null</code>. Однако не стоит забывать, что мы также должны позаботиться о ссылках из родительского узла.</p>
+<p><img src="https://user-images.githubusercontent.com/37180024/97105351-13207b00-16cb-11eb-84a6-6212ac846fb2.png" alt="delete leaf node"></p>
+<h5>Удаление узла с одним потомком</h5>
+<p>Второй сценарий включает в себя узел, который имеет левый или правый дочерний узел. Как вы можете видеть на диаграмме ниже, нам нужно пропустить соответствующий узел и назначить родительский указатель на дочерний узел:</p>
+<p><img src="https://user-images.githubusercontent.com/37180024/97105390-64306f00-16cb-11eb-9d4e-2695e38053c9.png" alt="delete node that has one child"></p>
+<h5>Удаление узла с двумя потомками</h5>
+<p>Третий и последний сценарий включает в себя узел с двумя дочерними элементами. Чтобы удалить такой узел, нужно выполнить следующие действия:</p>
+<ol>
+<li>Как только вы найдете узел, который нужно удалить, найдите минимальный узел из его правого края поддерева (см. заштрихованную область на диаграмме ниже).</li>
+<li>Далее вы можете обновить значение узла ключом минимального узла из его правого поддерева. Этим действием вы заменяете ключ узла, что означает, что он будет удален.</li>
+<li>Теперь у вас есть два узла в дереве с одним и тем же ключом, что не правильно. Таким образом, нужно удалить минимальный узел из правого поддерева, поскольку вы переместили его на место удаленного узла.</li>
+<li>Наконец, нужно вернуть обновленную ссылку на узел его родителю.</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/37180024/97105460-ddc85d00-16cb-11eb-9982-0e212ad1a409.png" alt="delete node that has two children"></p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+  Copyright 	&#169; 2020 Artem Gusev. All right reserved.
+</footer>
+
+<script src="scripts/third-party/prettify.js"></script>
+<script src="scripts/third-party/lang-css.js"></script>
+<script src="scripts/search.js"></script>
+<script src="scripts/third-party/fuse.js"></script>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script src="scripts/fix-code-block.js"></script>
+<script>
+var list = [{"title":"BinarySearchTree","link":"<a href=\"BinarySearchTree.html\">BinarySearchTree</a>"},{"title":"BinarySearchTree#findMinNode","link":"<a href=\"BinarySearchTree.html#findMinNode\">BinarySearchTree &rtrif; findMinNode</a>"},{"title":"BinarySearchTree#inOrderTraverse","link":"<a href=\"BinarySearchTree.html#inOrderTraverse\">BinarySearchTree &rtrif; inOrderTraverse</a>"},{"title":"BinarySearchTree#insert","link":"<a href=\"BinarySearchTree.html#insert\">BinarySearchTree &rtrif; insert</a>"},{"title":"BinarySearchTree#insertNode","link":"<a href=\"BinarySearchTree.html#insertNode\">BinarySearchTree &rtrif; insertNode</a>"},{"title":"BinarySearchTree#postOrderTraverse","link":"<a href=\"BinarySearchTree.html#postOrderTraverse\">BinarySearchTree &rtrif; postOrderTraverse</a>"},{"title":"BinarySearchTree#preOrderTraverse","link":"<a href=\"BinarySearchTree.html#preOrderTraverse\">BinarySearchTree &rtrif; preOrderTraverse</a>"},{"title":"BinarySearchTree#remove","link":"<a href=\"BinarySearchTree.html#remove\">BinarySearchTree &rtrif; remove</a>"},{"title":"BinarySearchTree#removeLeafNode","link":"<a href=\"BinarySearchTree.html#removeLeafNode\">BinarySearchTree &rtrif; removeLeafNode</a>"},{"title":"BinarySearchTree#removeNodeWithoutLeftChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutLeftChild\">BinarySearchTree &rtrif; removeNodeWithoutLeftChild</a>"},{"title":"BinarySearchTree#removeNodeWithoutRightChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutRightChild\">BinarySearchTree &rtrif; removeNodeWithoutRightChild</a>"},{"title":"BinarySearchTree#removeNodeWithTwoChildren","link":"<a href=\"BinarySearchTree.html#removeNodeWithTwoChildren\">BinarySearchTree &rtrif; removeNodeWithTwoChildren</a>"},{"title":"BinarySearchTree#search","link":"<a href=\"BinarySearchTree.html#search\">BinarySearchTree &rtrif; search</a>"},{"title":"Node","link":"<a href=\"Node.html\">Node</a>"}];
+setupSearch(list)
+</script>
+
+ 
+<script type="text/javascript" src="scripts/misc.js"></script>
+</body>
+</html>

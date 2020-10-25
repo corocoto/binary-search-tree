@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      
+        <meta name="author" content="Artem Gusev">
+      
+        <meta name="description" content="Binary Search Tree project documentation">
+      
+    
+    <title>index.js</title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/third-party/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/third-party/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-base.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-light.css">
+    
+    
+    
+<svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/>
+                <path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/>
+            </g>
+        </symbol>
+    </defs>
+</svg>
+
+</head>
+<body>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><ul><li><a href='https://github.com/corocoto/binary-search-tree/' class='github-link' id='github-link' target='_blank'>Github</a></li></ul><h3>Classes</h3><ul><li><a href="BinarySearchTree.html">BinarySearchTree</a><ul class='methods'><li data-type='method'><a href="BinarySearchTree.html#findMinNode">findMinNode</a></li><li data-type='method'><a href="BinarySearchTree.html#inOrderTraverse">inOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#insert">insert</a></li><li data-type='method'><a href="BinarySearchTree.html#insertNode">insertNode</a></li><li data-type='method'><a href="BinarySearchTree.html#postOrderTraverse">postOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#preOrderTraverse">preOrderTraverse</a></li><li data-type='method'><a href="BinarySearchTree.html#remove">remove</a></li><li data-type='method'><a href="BinarySearchTree.html#removeLeafNode">removeLeafNode</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutLeftChild">removeNodeWithoutLeftChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithoutRightChild">removeNodeWithoutRightChild</a></li><li data-type='method'><a href="BinarySearchTree.html#removeNodeWithTwoChildren">removeNodeWithTwoChildren</a></li><li data-type='method'><a href="BinarySearchTree.html#search">search</a></li></ul></li><li><a href="Node.html">Node</a></li></ul></div>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Узел, используемый внутри BST.
+ * @example
+ * ```js
+ * const node = new Node(data);
+ * ```
+ */
+class Node {
+    /**
+     * @constructor
+     * @param {Number} data значение узла
+     */
+    constructor(data) {
+        this.data = data; //значение узла
+        this.left = null; //левый дочерний узел
+        this.right = null; //правый дочений узел
+    }
+}
+
+/**
+ * Класс для создания экземпляра BST.
+ * @example
+ * ```js
+ * const BST = new BinarySearchTree();
+ * BST.insert(11);
+ * BST.insert(5);
+ * BST.insert(4);
+ * BST.insert(5);
+ * BST.insert(12);
+ * BST.insert(6);
+ * ```
+ */
+class BinarySearchTree {
+    /**
+     * @constructor
+     */
+    constructor() {
+        this.root = null; // bst root
+    }
+
+    /**
+     * Создает экземпляр класса `Node`. И располагает его внутри BST
+     * @param {Number} data значение добавляемого узла
+     * @return {void}
+     */
+    insert(data) {
+        const node = new Node(data);
+        if (this.root) {
+            this.insertNode(this.root, node);
+        } else {
+            this.root = node;
+        }
+    }
+
+    /**
+     * Размещает узел в нужной позиции BST
+     * @param {Node} node родительский узел
+     * @param {Node} newNode добавляемый узел
+     * @return {void}
+     */
+    insertNode(node, newNode) {
+        if (node.data > newNode.data) {
+            node.left ? this.insertNode(node.left, newNode) : node.left = newNode;
+        } else {
+            node.right ? this.insertNode(node.right, newNode) : node.right = newNode;
+        }
+    }
+
+    /**
+     * Прямой обход BST.
+     * >При прямом обходе будут посещаться все узлы в порядке возрастания, начиная с указанного узла (хотя это и необязательно),
+     * и выполнять заданную callback функцию (также необязательно).
+     * @param {Node} node узел, с которого начинается обход дерева
+     * @param {Function} callback callback функция
+     * @return {void}
+     */
+    inOrderTraverse(node, callback) {
+        if (node) {
+            this.inOrderTraverse(node.left, callback);
+            callback(node.data);
+            this.inOrderTraverse(node.right, callback);
+        }
+    }
+
+    /**
+     * Симметричный обход
+     * >При симметричном обходе посещаются каждый узел до его потомков.
+     * @param {Node} node узел, с которого начинается обход дерева
+     * @param {Function} callback callback функция, которая будет выполнена при каждой итерации
+     * @return {void}
+     */
+    preOrderTraverse(node, callback) {
+        if (node) {
+            callback(node.data);
+            this.preOrderTraverse(node.left, callback);
+            this.preOrderTraverse(node.right, callback);
+        }
+    }
+
+    /**
+     * Обход в обратном порядке
+     * >При обходе в обратном порядке посещаются узлы после посещения его потомков.
+     * @param {Node} node узел, с которого начинается обход дерева
+     * @param {Function} callback callback функция, которая будет выполнена при каждой итерации
+     * @return {void}
+     */
+    postOrderTraverse(node, callback) {
+        if (node) {
+            this.postOrderTraverse(node.left, callback);
+            this.postOrderTraverse(node.right, callback);
+            callback(node.data);
+        }
+    }
+
+    /**
+     * Поиск
+     * @param {Node} node Узел, в котором производится поиск
+     * @param {Number} data значение, которое ищем
+     * @return {Node} узел, с указанным значением `data`
+     */
+    search(node, data) {
+        if (node) {
+            if (node.data > data) {
+                return this.search(node.left, data);
+            } else if (node.data &lt; data) {
+                return this.search(node.right, data);
+            } else {
+                return node;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Находит узел с минимальным значением в дереве
+     * @param {Node} node узел, который будем проверять
+     * @return {Node} эземпляр `Node`, содержащий минальное значение
+     */
+    findMinNode(node) {
+        return node.left ? this.findMinNode(node.left) : node;
+    }
+
+    /**
+     * Ужадение узла
+     * @param {Number} data значение удаляемого узла
+     * @return {void}
+     */
+    remove(data) {
+        this.root = this.removeNode(this.root, data);
+    }
+
+    removeNode(node, data) {
+        if (node) {
+            if (node.data > data) {
+                node.left = this.removeNode(node.left, data);
+                return node;
+            } else if (node.data &lt; data) {
+                node.right = this.removeNode(node.right, data);
+                return node;
+            } else {
+                if (!node.left &amp;&amp; !node.right) {
+                    return this.removeLeafNode(node);
+                }
+
+                if (!node.left) {
+                    return this.removeNodeWithoutLeftChild(node);
+                } else if (!node.right) {
+                    return this.removeNodeWithoutRightChild(node);
+                }
+
+                return this.removeNodeWithTwoChildren(node);
+            }
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Удаление узла с двумя потомками.
+     * @param {Node} node удаляемый узел
+     * @return {Node} минимальный дочерний элемент у правого поддерева указанного узла
+     */
+    removeNodeWithTwoChildren(node) {
+        const newNode = this.findMinNode(node.right);
+        node.data = newNode.data;
+        node.right = this.removeNode(node.right, newNode.data);
+        return node;
+    }
+
+    /**
+     * Удаляет родительский узел, устанавливая вместо него дочерний правый
+     * @param {Node} node родительский узел
+     * @return {Node} новый родительский узел (бывший дочерний правый)
+     */
+    removeNodeWithoutLeftChild(node) {
+        node = node.right;
+        return node;
+    }
+
+    /**
+     * Удаляет родительский узел, устанавливая вместо него дочерний левый
+     * @param {Node} node родительский узел
+     * @return {Node} новый родительский узел (бывший дочерний левый)
+     */
+    removeNodeWithoutRightChild(node) {
+        node = node.left;
+        return node;
+    }
+
+    /**
+     * Удаление крайнего узла (leaf node).
+     * >Крайний узел - узел без дочерних элементов
+     * @param {Node} node Узел, который собираемся удалить (присвоить `null`)
+     * @return {Node} Обновленное значение узла
+     */
+    removeLeafNode(node) {
+        node = null;
+        return node;
+    }
+}
+
+//Обход дерева (Traverse) — это процесс посещения всех узлов дерева и выполнения операции на каждом узле.Существует три общих подхода: прямой (in-order), симметричный или поперечный (pre-order) и в обратном порядке (post-order).
+
+const BST = new BinarySearchTree();
+BST.insert(15);
+BST.insert(14);
+BST.insert(294);
+BST.insert(13);
+BST.insert(363);
+BST.insert(5);
+BST.insert(8);
+BST.insert(7);
+const searchedNode = BST.search(BST.root, 8);
+
+console.log('Проверка работы прямого обхода:');
+BST.inOrderTraverse(BST.root, (item) => console.log(item));
+
+console.log('\nПроверка работы симметричного обхода:');
+BST.preOrderTraverse(BST.root, (item) => console.log(item));
+
+BST.remove(13);
+console.log('\nПроверка работы обхода в обратном порядке:');
+BST.postOrderTraverse(BST.root, (item) => console.log(item));</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+  Copyright 	&#169; 2020 Artem Gusev. All right reserved.
+</footer>
+
+<script src="scripts/third-party/prettify.js"></script>
+<script src="scripts/third-party/lang-css.js"></script>
+<script src="scripts/search.js"></script>
+<script src="scripts/third-party/fuse.js"></script>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script src="scripts/fix-code-block.js"></script>
+<script>
+var list = [{"title":"BinarySearchTree","link":"<a href=\"BinarySearchTree.html\">BinarySearchTree</a>"},{"title":"BinarySearchTree#findMinNode","link":"<a href=\"BinarySearchTree.html#findMinNode\">BinarySearchTree &rtrif; findMinNode</a>"},{"title":"BinarySearchTree#inOrderTraverse","link":"<a href=\"BinarySearchTree.html#inOrderTraverse\">BinarySearchTree &rtrif; inOrderTraverse</a>"},{"title":"BinarySearchTree#insert","link":"<a href=\"BinarySearchTree.html#insert\">BinarySearchTree &rtrif; insert</a>"},{"title":"BinarySearchTree#insertNode","link":"<a href=\"BinarySearchTree.html#insertNode\">BinarySearchTree &rtrif; insertNode</a>"},{"title":"BinarySearchTree#postOrderTraverse","link":"<a href=\"BinarySearchTree.html#postOrderTraverse\">BinarySearchTree &rtrif; postOrderTraverse</a>"},{"title":"BinarySearchTree#preOrderTraverse","link":"<a href=\"BinarySearchTree.html#preOrderTraverse\">BinarySearchTree &rtrif; preOrderTraverse</a>"},{"title":"BinarySearchTree#remove","link":"<a href=\"BinarySearchTree.html#remove\">BinarySearchTree &rtrif; remove</a>"},{"title":"BinarySearchTree#removeLeafNode","link":"<a href=\"BinarySearchTree.html#removeLeafNode\">BinarySearchTree &rtrif; removeLeafNode</a>"},{"title":"BinarySearchTree#removeNodeWithoutLeftChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutLeftChild\">BinarySearchTree &rtrif; removeNodeWithoutLeftChild</a>"},{"title":"BinarySearchTree#removeNodeWithoutRightChild","link":"<a href=\"BinarySearchTree.html#removeNodeWithoutRightChild\">BinarySearchTree &rtrif; removeNodeWithoutRightChild</a>"},{"title":"BinarySearchTree#removeNodeWithTwoChildren","link":"<a href=\"BinarySearchTree.html#removeNodeWithTwoChildren\">BinarySearchTree &rtrif; removeNodeWithTwoChildren</a>"},{"title":"BinarySearchTree#search","link":"<a href=\"BinarySearchTree.html#search\">BinarySearchTree &rtrif; search</a>"},{"title":"Node","link":"<a href=\"Node.html\">Node</a>"}];
+setupSearch(list)
+</script>
+
+ 
+<script type="text/javascript" src="scripts/misc.js"></script>
+</body>
+</html>
