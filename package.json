@@ -4,7 +4,8 @@
   "description": "BST realization on JS",
   "private": true,
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/corocoto/binary-search-tree/issues"
   },
-  "homepage": "https://github.com/corocoto/binary-search-tree#readme"
+  "homepage": "https://github.com/corocoto/binary-search-tree#readme",
+  "dependencies": {
+    "clean-jsdoc-theme": "^2.2.12",
+    "jsdoc": "^3.6.6"
+  }
 }
